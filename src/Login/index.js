@@ -94,7 +94,7 @@ const Login = () => {
                       name="rememberMe"
                       {...formik.getFieldProps("rememberMe")}
                     />{" "}
-                    Remember me?{" "}
+                    <span className="light-txt">Remember me?</span>
                   </label>
                 </div>
               </div>
@@ -103,7 +103,7 @@ const Login = () => {
               </div>
               <div className="additional-links-container">
                 <a href="#">Forgot Your Password?</a>
-                <span>
+                <span className="light-txt">
                   Don't have an account? <a href="#">Sign up</a>
                 </span>
                 <a href="#">Resend email confirmation</a>

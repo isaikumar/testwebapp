@@ -57,7 +57,12 @@ select {
 }
 .additional-links-container{
   text-align: center;
+  font-size: 13px;
 }
 .card-header{
   text-align: center;
+}
+.light-txt{
+  color: #21282e;
+  font-weight: 400;
 }
