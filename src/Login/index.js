@@ -2,6 +2,9 @@ import React from "react";
 import "./style.css";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { loggIn } from "../controller/loginController";
 
 const Login = () => {
   const initialValues = { emailId: "", Password: "", rememberMe: false };
@@ -15,7 +18,31 @@ const Login = () => {
   });
 
   const onSubmit = (values) => {
-
+    //hitting the serviceCall in the Login Controller
+    loggIn(values)
+      .then((res) => {
+        //Added a dummy toaster Message
+        toast.success("Login Successfull", {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      })
+      .catch((err) => {
+        toast.warn("Login Failed", {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      });
   }
   const formik = useFormik({ initialValues, validationSchema, onSubmit });
 //Formik Intilization by passing intialvalues and validation and submitHandling
@@ -85,6 +112,7 @@ const Login = () => {
           </div>
         </div>
       </form>
+      <ToastContainer />
     </div>
   );
 };
