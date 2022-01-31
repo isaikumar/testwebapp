@@ -11,7 +11,6 @@ const Login = () => {
   const validationSchema = yup.object({
     emailId: yup
       .string()
-      .email("Enter A valid Email Id")
       .required("Email Id is Required"),
     Password: yup.string().required("Password is Required"),
     rememberMe: yup.boolean(),
@@ -87,19 +86,19 @@ const Login = () => {
               </div>
               <div>
                 <div className="checkbox">
-                  <label>
+                  <label className="light-txt">
                     {" "}
                     <input
                       type="checkbox"
                       name="rememberMe"
                       {...formik.getFieldProps("rememberMe")}
                     />{" "}
-                    <span className="light-txt">Remember me?</span>
+                    Remember me?{" "}
                   </label>
                 </div>
               </div>
               <div>
-                <button type="button">Sign in</button>
+                <button>Sign in</button>
               </div>
               <div className="additional-links-container">
                 <a href="#">Forgot Your Password?</a>

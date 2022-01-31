@@ -28,6 +28,8 @@ button {
   border: none !important;
   width: 100%;
   padding: 10px;
+  font-weight: bold;
+  font-size: 2.5vh;
 }
 
 a {
@@ -61,6 +63,7 @@ select {
 }
 .card-header{
   text-align: center;
+  font-size: 3.5vh;
 }
 .light-txt{
   color: #21282e;
